@@ -330,7 +330,7 @@ export default function Home() {
                         </>
                       ) : null}
                     </div>
-                    <div className="mt-3 flex justify-between px-1">
+                    <div className={`mt-3 flex justify-between px-1 ${hasImage || isGenerating ? '' : 'hidden'}`}>
                       <span className="text-[9px] tracking-widest font-bold uppercase">{item.title}</span>
                     </div>
                   </div>
