@@ -21,8 +21,14 @@ export default function Home() {
   
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const fileInputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  
   const [activePage, setActivePage] = useState('studio');
 
+  // 更新 ref 设置函数
+  const setRef = (index: number) => (el: HTMLInputElement | null) => {
+    fileInputRefs.current[index] = el;
+  };
+  
   // 更新上传状态显示
   useEffect(() => {
     const count = uploadedItems.filter(item => item !== null).length;
@@ -46,12 +52,14 @@ export default function Home() {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        const base64Data = e.target?.result as string;
-        setUploadedItems(prev => {
-          const newItems = [...prev];
-          newItems[index] = base64Data;
-          return newItems;
-        });
+        const base64Data = e.target?.result as string | undefined;
+        if (base64Data) {
+          setUploadedItems(prev => {
+            const newItems = [...prev];
+            newItems[index] = base64Data;
+            return newItems;
+          });
+        }
       };
       reader.readAsDataURL(file);
     } else {
@@ -233,7 +241,7 @@ export default function Home() {
                 <div key={index} className="upload-slot group">
                   <input 
                     type="file" 
-                    ref={el => fileInputRefs.current[index] = el}
+                    ref={setRef(index)}
                     className="hidden" 
                     id={`file-input-${index}`} 
                     data-index={index}
