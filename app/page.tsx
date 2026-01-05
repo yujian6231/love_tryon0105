@@ -210,12 +210,12 @@ export default function Home() {
           <div className="flex items-center space-x-5">
             <button className="hover:opacity-60 transition">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </button>
             <button className="hover:opacity-60 transition">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
               </svg>
             </button>
           </div>
@@ -248,16 +248,18 @@ export default function Home() {
                     onDragLeave={(e) => handleDragLeave(e, index)}
                     onDrop={(e) => handleDrop(e, index)}
                   >
-                    <div className="transition-transform group-hover:scale-110 duration-300 flex flex-col items-center z-20" id={`icon-container-${index}`}>
-                      <svg className="w-6 h-6 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 4v16m8-8H4"></path>
-                      </svg>
-                      <p className="text-[10px] tracking-widest uppercase">Select Item</p>
-                    </div>
+                    {!uploadedItems[index] && (
+                      <div className="transition-transform group-hover:scale-110 duration-300 flex flex-col items-center z-20" id={`icon-container-${index}`}>
+                        <svg className="w-6 h-6 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        <p className="text-[10px] tracking-widest uppercase">Select Item</p>
+                      </div>
+                    )}
                     {uploadedItems[index] && (
                       <img 
                         id={`preview-${index}`} 
-                        className="upload-preview" 
+                        className="upload-preview w-full h-full object-cover" 
                         src={uploadedItems[index] || ''} 
                         alt="Preview"
                       />

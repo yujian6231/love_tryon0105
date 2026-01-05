@@ -38,8 +38,8 @@
                     <button class="hover:text-black transition-colors cursor-not-allowed uppercase">Collections</button>
                 </div>
                 <div class="flex items-center space-x-5">
-                    <button class="hover:opacity-60 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-                    <button class="hover:opacity-60 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></button>
+                    <button class="hover:opacity-60 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                    <button class="hover:opacity-60 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></button>
                 </div>
             </div>
         </header>
@@ -60,7 +60,7 @@
                                              id="upload-box-${i}" onclick="document.getElementById('file-input-${i}').click()"
                                              ondragover="window.handleDragOver(event, ${i})" ondragleave="window.handleDragLeave(event, ${i})" ondrop="window.handleDrop(event, ${i})">
                                             <div class="transition-transform group-hover:scale-110 duration-300 flex flex-col items-center z-20" id="icon-container-${i}">
-                                                <svg class="w-6 h-6 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 4v16m8-8H4"></path></svg>
+                                                <svg class="w-6 h-6 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" d="M12 4v16m8-8H4"></path></svg>
                                                 <p class="text-[10px] tracking-widest uppercase">Select Item</p>
                                             </div>
                                             <img id="preview-${i}" class="upload-preview hidden" src="" alt="Preview">
@@ -72,7 +72,7 @@
                     </div>
                     <div class="mt-12">
                         <button id="generate-button" class="w-full h-14 bg-black text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-zinc-800 transition-all disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed flex items-center justify-center" onclick="window.handleGenerateLook()">
-                            <svg id="loading-spinner-btn" class="animate-spin h-4 w-4 text-white mr-3 hidden" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                            <svg id="loading-spinner-btn" class="animate-spin h-4 w-4 text-white mr-3 hidden" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                             <span id="button-text">Generate Look</span>
                         </button>
                     </div>
