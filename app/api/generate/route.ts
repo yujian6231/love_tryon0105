@@ -6,7 +6,8 @@ if (!API_KEY) {
   console.error('GEMINI_API_KEY is not set in environment variables');
 }
 
-const MODEL_NAME = 'gemini-2.5-flash-image-preview';
+//const MODEL_NAME = 'gemini-2.5-flash-image-preview';
+const MODEL_NAME = 'gemini-3-pro-image-preview';
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`;
 
 // 定义请求体类型
